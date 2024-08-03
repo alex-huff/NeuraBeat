@@ -19,10 +19,10 @@ embedding_model_path = '../model/saved models/embedding_model.pt'
 bucket_name = 'neurabeat'
 
 conn = psycopg2.connect(
-    dbname="neurabeatdb",
-    user="pcoin",
-    password="Prak@3303",
-    host="localhost"
+    dbname=os.getenv('DB_NAME'),
+    user=os.getenv('DB_USER'),
+    password=os.getenv('DB_PASSWORD'),
+    host=os.getenv('DB_HOST')
 )
 
 def create_table(conn):
